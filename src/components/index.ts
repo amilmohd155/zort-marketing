@@ -1,2 +1,3 @@
-export * from "./download-button";
+export * from "./download.button";
 export * from "./header";
+export * from "./menu.icon";

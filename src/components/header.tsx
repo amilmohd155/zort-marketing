@@ -95,7 +95,7 @@ export const Header = () => {
                   exit={{ height: 0 }}
                   className="overflow-hidden md:hidden"
                 >
-                  <MobileNav />
+                  <MobileNav onClick={() => setOpen(false)} />
                 </motion.nav>
               )}
             </AnimatePresence>
@@ -107,7 +107,7 @@ export const Header = () => {
   );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ onClick }: { onClick?: () => void }) => {
   return (
     <ul className="flex flex-col">
       {menuItems
@@ -117,6 +117,7 @@ const MobileNav = () => {
             <Link
               href={item.href}
               className="block py-3 text-center capitalize active:bg-black/50"
+              onClick={onClick}
             >
               {item.label}
             </Link>

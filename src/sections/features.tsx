@@ -51,7 +51,7 @@ export const FeatureSection = () => {
               <br /> for <br /> Smart Betting
             </h2>
           </div>
-          <div className="mx-auto mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:mt-8 lg:max-w-3xl">
+          <div className="mx-auto mt-5 grid grid-cols-1 gap-5 md:mt-12 md:grid-cols-2 lg:max-w-3xl">
             {features.map((feature) => (
               <FeatureCard key={feature.label} feature={feature} />
             ))}

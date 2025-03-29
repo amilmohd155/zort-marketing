@@ -27,10 +27,10 @@ export const Footer = () => {
                 © 2024 ZORT. All rights reserved.
               </h6>
             </div>
-            <div className="text-foreground/80 order-1 flex flex-col gap-5 text-center text-xs font-light md:order-2 md:mx-auto md:flex-row md:text-start">
+            <div className="text-foreground/80 order-1 flex flex-col gap-5 text-center text-xs font-light md:order-2 md:flex-row md:justify-around md:text-start lg:text-sm">
               <div className="flex flex-col gap-y-1.5">
-                <p className="text-foreground text-sm font-semibold uppercase">
-                  Links
+                <p className="text-foreground text-sm font-semibold uppercase lg:text-base">
+                  Company
                 </p>
                 <Link href="#features">Features</Link>
                 <Link href="#how-it-works">How it works</Link>
@@ -45,7 +45,7 @@ export const Footer = () => {
               </div>
               <div className="space-y-2">
                 <p className="text-foreground text-sm font-semibold uppercase">
-                  Socials
+                  Follow us on
                 </p>
                 <div className="flex flex-row items-center justify-center gap-x-3 text-2xl md:justify-start">
                   <Link href="/">

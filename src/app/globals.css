@@ -84,3 +84,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .digits {
+    @apply size-30;
+  }
+}

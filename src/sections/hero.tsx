@@ -2,9 +2,9 @@ import { DownloadButton } from "@/components";
 
 export const HeroSection = () => {
   return (
-    <section className="">
+    <section className="pt-[98px] md:pt-[130px] lg:pt-[162px]">
       <div className="container mx-auto max-w-screen-xl px-4">
-        <div className="grid h-screen grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="flex flex-col items-center justify-center gap-y-8">
             <h1 className="max-w-xs text-center text-5xl md:text-6xl">
               Smarter{" "}

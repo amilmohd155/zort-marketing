@@ -1,12 +1,23 @@
-import { HeroSection, Features } from "@/sections";
+import {
+  HeroSection,
+  FeatureSection,
+  MarqueeSection,
+  HowitWorksSection,
+  Support,
+} from "@/sections";
 
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="bg-background font-[family-name:var(--font-geist-sans)]">
-      <HeroSection />
-      <Features />
+      <div className="flex h-screen flex-col justify-between">
+        <HeroSection />
+        <MarqueeSection />
+      </div>
+      <FeatureSection />
+      <HowitWorksSection />
+      <Support />
     </main>
   );
 }

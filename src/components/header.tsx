@@ -50,7 +50,7 @@ export const Header = () => {
 
   return (
     <header>
-      <div className="fixed inset-[0%_0%_auto] z-30 px-2 py-4 md:px-5 lg:py-8">
+      <div className="fixed top-0 z-50 w-full px-2 py-4 md:px-5 lg:py-8">
         <div className="container mx-auto max-w-screen-xl">
           <div className="rounded-xl border bg-[#121212cc] backdrop-blur-sm">
             <div className="grid grid-cols-[1fr_auto] items-center justify-between px-4 py-2 md:grid-cols-[auto_1fr]">
@@ -102,6 +102,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
+      {/* <div className="h-[98px] md:h-[130px] lg:h-[162px]" /> */}
     </header>
   );
 };

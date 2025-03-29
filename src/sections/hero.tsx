@@ -1,10 +1,12 @@
 import { DownloadButton } from "@/components";
+import { MockDevice } from "@/components/mock-device";
 
+// pt-[98px] md:pt-[130px] lg:pt-[162px]
 export const HeroSection = () => {
   return (
-    <section className="pt-[98px] md:pt-[130px] lg:pt-[162px]">
-      <div className="container mx-auto max-w-screen-xl px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+    <section className="">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="flex flex-col items-center justify-center gap-y-8">
             <h1 className="max-w-xs text-center text-5xl md:text-6xl">
               Smarter{" "}
@@ -21,6 +23,11 @@ export const HeroSection = () => {
             <DownloadButton />
           </div>
           {/* //Todo : Add hero image */}
+          <div className="relative mx-auto hidden perspective-midrange lg:flex">
+            <MockDevice className="origin-center translate-z-12 rotate-x-0 rotate-y-45 rotate-z-0 perspective-origin-center" />
+            <MockDevice className="origin-center -translate-x-10 translate-y-10 translate-z-8 rotate-x-0 -rotate-y-45 rotate-z-0 perspective-origin-center" />
+            {/* <MockDevice className="origin-bottom-left -translate-x-1/2 rotate-12" /> */}
+          </div>
         </div>
       </div>
     </section>

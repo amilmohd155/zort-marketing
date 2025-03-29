@@ -56,7 +56,7 @@ export const Header = () => {
             <div className="grid grid-cols-[1fr_auto] items-center justify-between px-4 py-2 md:grid-cols-[auto_1fr]">
               <Link href="/" className="">
                 <Image
-                  src="/logo_dark 1.png"
+                  src="/logo.png"
                   width={793}
                   height={320}
                   alt="logo"

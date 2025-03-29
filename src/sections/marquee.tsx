@@ -27,7 +27,7 @@ const marqueeItems: MarqueeItem[] = [
 
 export const MarqueeSection = () => {
   return (
-    <section className="overflow-x-clip py-12">
+    <section className="absolute bottom-0 z-20 overflow-x-clip py-8">
       <div className="container mx-auto max-w-screen-xl">
         <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <motion.div

@@ -63,7 +63,7 @@ export const HowitWorksSection = () => {
               in 4 easy steps
             </h3>
           </div>
-          <div className="mx-auto mt-5 grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-2 lg:mt-8 lg:max-w-3xl">
+          <div className="mx-auto mt-5 grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-2 lg:mt-12 lg:max-w-3xl">
             {Steps.map((step) => (
               <StepCard key={step.id} step={step} />
             ))}
@@ -76,8 +76,8 @@ export const HowitWorksSection = () => {
 
 const StepCard = ({ step }: { step: Step }) => {
   return (
-    <div className="relative col-span-1 flex flex-col items-center gap-2 rounded-xl bg-black/30 px-3 py-5 text-center lg:px-5">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-300/40 blur-xs">
+    <div className="group relative col-span-1 flex flex-col items-center gap-2 rounded-sm border border-dashed bg-black/30 px-3 py-5 text-center lg:px-5">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-300/40 opacity-0 blur-xs transition-opacity duration-100 ease-in-out group-hover:opacity-100">
         {step.digit}
       </div>
       <div className="text-card-foreground/60 -rotate-15 text-4xl">

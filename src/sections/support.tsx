@@ -1,15 +1,21 @@
+import { SupportForm } from "@/components/support.form";
 import { Button } from "@/components/ui/button";
 
 export const Support = () => {
   return (
     <section>
       <div className="container mx-auto max-w-screen-xl">
-        <div className="py-12">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            <div className="flex flex-col items-start justify-center gap-y-5">
-              <h2 className="text-3xl font-bold">Have questions?</h2>
-              <Button>Contact us</Button>
+        <div className="px-4 py-12">
+          <div className="grid grid-cols-1 gap-5">
+            <div className="flex flex-col items-center justify-center gap-y-5">
+              <h2 className="text-center text-3xl font-bold md:text-4xl">
+                Have questions?
+              </h2>
+              <Button size="lg">Contact us</Button>
             </div>
+            {/* <div className="">
+              <SupportForm />
+            </div> */}
           </div>
         </div>
       </div>

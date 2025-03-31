@@ -102,12 +102,12 @@ export const Slider = ({
           repeat: 3,
         }}
         viewport={{ once: true }}
-        className="absolute top-1/2 right-0 flex -translate-y-1/2 flex-row items-center px-3 py-1 text-xl"
+        className="absolute top-1/2 right-0 flex -translate-y-1/2 flex-row items-center px-3 py-1 text-xs md:text-xl"
       >
-        <span className="me-3">Swipe</span>
-        <ChevronRight />
-        <ChevronRight />
-        <ChevronRight />
+        <span className="me-1 md:me-3">Swipe</span>
+        <ChevronRight className="size-3 md:size-5" />
+        <ChevronRight className="size-3 md:size-5" />
+        <ChevronRight className="size-3 md:size-5" />
       </motion.div>
     </div>
   );

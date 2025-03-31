@@ -1,6 +1,14 @@
 "use client";
 
-import { Bar, BarChart, LabelList, ResponsiveContainer, XAxis } from "recharts";
+import { memo } from "react";
+import {
+  Bar,
+  BarChart,
+  Label,
+  LabelList,
+  ResponsiveContainer,
+  XAxis,
+} from "recharts";
 
 const oddsDistribution = [
   { range: "1.5-2.0", percentage: 35 },
@@ -10,13 +18,30 @@ const oddsDistribution = [
 ];
 
 export const OddDistributionChart = () => {
-  const renderLabel = (props: any) => {
-    return <p className="text-sm text-blue-500">{props.value}</p>;
-  };
+  // const renderCustomizedLabel = (props: any) => {
+  //   const { x, y, width, value } = props;
+  //   const offset = 10;
+
+  //   return (
+  //     <g>
+  //       <text
+  //         x={x + width / 2}
+  //         y={y - offset}
+  //         fill="currentColor"
+  //         textAnchor="middle"
+  //         dominantBaseline="middle"
+  //         className="text-foreground/50 text-xs md:text-base"
+  //       >
+  //         {value}%
+  //       </text>
+  //     </g>
+  //   );
+  // };
+
   return (
     <div className="relative size-full overflow-clip p-5 md:px-10">
-      <div className="absolute">
-        <h6 className="text-lg">Odds Distribution</h6>
+      <div className="absolute right-0 left-0 text-center md:left-10 md:text-start">
+        <h6 className="text-foreground/50 text-lg">Odds Distribution</h6>
       </div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={oddsDistribution}>
@@ -27,27 +52,54 @@ export const OddDistributionChart = () => {
             </linearGradient>
           </defs>
 
-          <XAxis dataKey={"range"} axisLine={false} tickLine={false} />
+          <XAxis
+            dataKey={"range"}
+            axisLine={false}
+            tickLine={false}
+            tick={(props) => <AxisLabel {...props} />}
+          />
           <Bar
             dataKey="percentage"
             fill="url(#gradientColor)"
             radius={[5, 5, 0, 0]}
-            label={{
-              position: "top",
-              formatter: (value: number) => `${value}%`,
-            }}
           >
-            {/* <LabelList
+            <LabelList
               dataKey="percentage"
               position="top"
-              // formatter={(value: number) => `${value}%`}
-              content={(props) => {
-                return <p className="text-sm text-blue-500">{props.value}</p>;
-              }}
-            /> */}
+              formatter={(value: number) => `${value}%`}
+              height={20}
+              // content={(props) => <BarLabel {...props} />}
+              className="fill-foreground/50 text-xs md:text-base"
+            />
           </Bar>
         </BarChart>
       </ResponsiveContainer>
     </div>
   );
 };
+
+const AxisLabel = memo(
+  (props: { x: number; y: number; payload: { value: string } }) => {
+    const {
+      x,
+      y,
+      payload: { value },
+    } = props;
+
+    return (
+      <g>
+        <text
+          x={x}
+          y={y}
+          textAnchor="middle"
+          dominantBaseline="middle"
+          className="fill-foreground/50 text-xs md:text-base"
+        >
+          {value}
+        </text>
+      </g>
+    );
+  },
+);
+
+AxisLabel.displayName = "AxisLabel";

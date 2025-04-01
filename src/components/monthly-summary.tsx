@@ -1,5 +1,3 @@
-"use client";
-
 import { numberToCurrency } from "@/lib/utils";
 import { MoveDown, MoveUp } from "lucide-react";
 import { FaTrophy } from "react-icons/fa6";
@@ -16,11 +14,9 @@ const summary = {
 
 export const MonthlySummary = () => {
   return (
-    <div className="size-full overflow-clip p-5 md:px-10">
-      <div className="flex flex-col items-center gap-y-2">
-        <p className="text-foreground text-lg md:self-start">
-          Jan 2025 Summary
-        </p>
+    <div className="flex size-full flex-col gap-y-2 overflow-clip p-5 md:px-10">
+      <p className="text-foreground text-lg md:self-start">Jan 2025 Summary</p>
+      <div className="flex grow flex-col items-center justify-center md:gap-y-3">
         {/* Biggest Win/Loss */}
         <Card label="Biggest Win / Worst Loss">
           <span>{numberToCurrency(summary.biggestWin)}</span>
@@ -30,7 +26,7 @@ export const MonthlySummary = () => {
           </span>
           <span>{numberToCurrency(summary.biggestLoss)}</span>
         </Card>
-        <div className="mx-auto h-px w-1/2 bg-white/10" />
+        <div className="mx-auto h-px w-1/3 bg-white/10 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]" />
 
         {/* Total Profit */}
         <Card label="Total Profit / Win Rate">
@@ -39,7 +35,7 @@ export const MonthlySummary = () => {
           <span>{`${summary.winRateInPercent.toFixed(2)}%`}</span>
         </Card>
 
-        <div className="mx-auto h-px w-1/2 bg-white/10" />
+        <div className="mx-auto h-px w-1/3 bg-white/10 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]" />
 
         {/* Average Stake / Average Odds */}
         <Card label="Average Stake / Odds">

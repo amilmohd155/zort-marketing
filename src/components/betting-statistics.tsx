@@ -1,0 +1,101 @@
+import { numberToCurrency } from "@/lib/utils";
+import { Table, TableBody, TableCell, TableRow } from "./ui/table";
+
+type Stat = {
+  label: string;
+  value: number;
+  type: "number" | "percentage" | "currency";
+};
+
+const stats: Stat[] = [
+  {
+    label: "Total Bets",
+    value: 47,
+    type: "number",
+  },
+  {
+    label: "Win Rate",
+    value: 15.7,
+    type: "percentage",
+  },
+  {
+    label: "Biggest Win",
+    value: 145.5,
+    type: "currency",
+  },
+  {
+    label: "Worst Loss",
+    value: -50,
+    type: "currency",
+  },
+];
+
+const distributions = [
+  {
+    label: "Football",
+    value: 45,
+  },
+  {
+    label: "Basketball",
+    value: 30,
+  },
+  {
+    label: "F1",
+    value: 25,
+  },
+];
+
+export default function BettingStatistics() {
+  return (
+    <div className="flex size-full flex-col gap-y-4 overflow-clip md:gap-y-0">
+      <p className="text-foreground px-4 pt-4 text-center text-lg md:text-start">
+        Statistics & Distribution
+      </p>
+      <div className="grid grow grid-rows-2 md:grid-cols-[1fr_1fr] md:grid-rows-1 md:items-center">
+        <div className="col-span-1 grid grid-cols-2 grid-rows-2 gap-5 px-5">
+          {stats.map((stat) => (
+            <StatItem key={stat.label} {...stat} />
+          ))}
+        </div>
+
+        {/* <div className="mx-auto h-px w-1/2 bg-white/10 md:hidden" /> */}
+
+        <Table className="grid-cols-1">
+          <TableBody>
+            {distributions.map((item) => (
+              <TableRow key={item.label} className="">
+                <TableCell className="font-medium md:text-lg">
+                  {item.label}
+                </TableCell>
+                <TableCell className="">{`${item.value}%`}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+    </div>
+  );
+}
+
+const StatItem = ({ label, value, type }: Stat) => {
+  let formattedValue: string;
+
+  switch (type) {
+    case "number":
+      formattedValue = value.toString();
+      break;
+    case "percentage":
+      formattedValue = `${value}%`;
+      break;
+    case "currency":
+      formattedValue = numberToCurrency(value);
+      break;
+  }
+
+  return (
+    <figure className="flex flex-col items-center">
+      <p className="text-2xl font-bold lg:text-3xl">{formattedValue}</p>
+      <figcaption className="text-xs">{label}</figcaption>
+    </figure>
+  );
+};

@@ -6,3 +6,4 @@ export { default as Circles } from "./circles";
 export * from "./charts";
 export * from "./slider";
 export * from "./monthly-summary";
+export { default as BettingStatistics } from "./betting-statistics";

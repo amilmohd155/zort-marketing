@@ -1,10 +1,10 @@
-type Stat = {
+export type Stats = {
   label: string;
   value: number;
   type: "number" | "percentage" | "currency";
 };
 
-const stats: Stat[] = [
+const stats: Stats[] = [
   {
     label: "Total Bets",
     value: 47,

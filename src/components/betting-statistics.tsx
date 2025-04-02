@@ -1,6 +1,6 @@
 import { numberToCurrency } from "@/lib/utils";
 import { Table, TableBody, TableCell, TableRow } from "./ui/table";
-import { Betting } from "@/data";
+import { Betting, Stats } from "@/data";
 
 export default function BettingStatistics() {
   return (
@@ -34,7 +34,7 @@ export default function BettingStatistics() {
   );
 }
 
-const StatItem = ({ label, value, type }: Stat) => {
+const StatItem = ({ label, value, type }: Stats) => {
   let formattedValue: string;
 
   switch (type) {

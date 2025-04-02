@@ -5,7 +5,6 @@ import { GoZap } from "react-icons/go";
 import { RiDashboardFill } from "react-icons/ri";
 
 import { One, Two, Three, Four } from "@/components";
-import { motion } from "motion/react";
 
 type Step = {
   id: number;

@@ -1,14 +1,7 @@
 "use client";
 
 import { memo } from "react";
-import {
-  Bar,
-  BarChart,
-  Label,
-  LabelList,
-  ResponsiveContainer,
-  XAxis,
-} from "recharts";
+import { Bar, BarChart, LabelList, ResponsiveContainer, XAxis } from "recharts";
 
 const oddsDistribution = [
   { range: "1.5-2.0", percentage: 35 },

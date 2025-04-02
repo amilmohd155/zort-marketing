@@ -10,7 +10,7 @@ export const CTA = () => {
         <div className="px-4 py-12">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <div className="flex flex-col items-center justify-center gap-y-5 lg:items-start">
-              <h2 className="max-w-md text-center text-3xl font-bold lg:text-start lg:text-6xl lg:leading-18">
+              <h2 className="font-display max-w-md text-center text-3xl font-bold lg:text-start lg:text-6xl lg:leading-18">
                 Ready to boost your betting experience ?
               </h2>
               <DownloadButton className="w-44" />

@@ -1,49 +1,6 @@
 import { numberToCurrency } from "@/lib/utils";
 import { Table, TableBody, TableCell, TableRow } from "./ui/table";
-
-type Stat = {
-  label: string;
-  value: number;
-  type: "number" | "percentage" | "currency";
-};
-
-const stats: Stat[] = [
-  {
-    label: "Total Bets",
-    value: 47,
-    type: "number",
-  },
-  {
-    label: "Win Rate",
-    value: 15.7,
-    type: "percentage",
-  },
-  {
-    label: "Biggest Win",
-    value: 145.5,
-    type: "currency",
-  },
-  {
-    label: "Worst Loss",
-    value: -50,
-    type: "currency",
-  },
-];
-
-const distributions = [
-  {
-    label: "Football",
-    value: 45,
-  },
-  {
-    label: "Basketball",
-    value: 30,
-  },
-  {
-    label: "F1",
-    value: 25,
-  },
-];
+import { Betting } from "@/data";
 
 export default function BettingStatistics() {
   return (
@@ -53,7 +10,7 @@ export default function BettingStatistics() {
       </p>
       <div className="grid grow grid-rows-2 md:grid-cols-[1fr_1fr] md:grid-rows-1 md:items-center">
         <div className="col-span-1 grid grid-cols-2 grid-rows-2 gap-5 px-5">
-          {stats.map((stat) => (
+          {Betting.stats.map((stat) => (
             <StatItem key={stat.label} {...stat} />
           ))}
         </div>
@@ -62,7 +19,7 @@ export default function BettingStatistics() {
 
         <Table className="grid-cols-1">
           <TableBody>
-            {distributions.map((item) => (
+            {Betting.distributions.map((item) => (
               <TableRow key={item.label} className="">
                 <TableCell className="font-medium md:text-lg">
                   {item.label}

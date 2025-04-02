@@ -1,10 +1,11 @@
-import { CSSProperties, ReactNode } from "react";
+"use client";
+import { ReactNode } from "react";
 import { FaCamera, FaMobile } from "react-icons/fa";
 import { GoZap } from "react-icons/go";
 import { RiDashboardFill } from "react-icons/ri";
-import Image from "next/image";
 
 import { One, Two, Three, Four } from "@/components";
+import { motion } from "motion/react";
 
 type Step = {
   id: number;
@@ -53,13 +54,15 @@ export const HowitWorksSection = () => {
   return (
     <section
       id="how-it-works"
-      className="bg-linear-150 from-[#030303] to-[#11151b]"
+      className="relative bg-linear-150 from-[#030303] to-[#11151b]"
     >
       <div className="container mx-auto max-w-screen-xl">
         <div className="px-4 py-24">
           <div className="text-center">
-            <h2 className="text-4xl leading-18 font-bold">Start Betting </h2>
-            <h3 className="text-primary text-xl font-semibold tracking-wide uppercase">
+            <h2 className="font-display text-4xl leading-18 font-semibold">
+              Start Betting
+            </h2>
+            <h3 className="font-display text-primary text-xl font-medium tracking-wide uppercase">
               in 4 easy steps
             </h3>
           </div>
@@ -76,11 +79,11 @@ export const HowitWorksSection = () => {
 
 const StepCard = ({ step }: { step: Step }) => {
   return (
-    <div className="group relative col-span-1 flex flex-col items-center gap-2 rounded-sm border border-dashed bg-black/30 px-3 py-5 text-center lg:px-5">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-300/40 opacity-0 blur-xs transition-opacity duration-100 ease-in-out group-hover:opacity-100">
+    <div className="group relative col-span-1 flex cursor-pointer flex-col items-center gap-2 rounded-sm border border-dashed bg-black/30 px-3 py-5 text-center transition-transform duration-200 hover:scale-95 lg:px-5">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-300 opacity-0 blur-xs transition-opacity duration-100 ease-in-out group-hover:opacity-40">
         {step.digit}
       </div>
-      <div className="text-card-foreground/60 -rotate-15 text-4xl">
+      <div className="text-card-foreground/60 -rotate-15 text-4xl transition-transform duration-100 ease-in-out group-hover:rotate-0">
         {step.icon}
       </div>
       <h2 className="text-xl font-semibold lg:text-2xl lg:whitespace-nowrap">

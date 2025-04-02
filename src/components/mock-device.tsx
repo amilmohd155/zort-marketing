@@ -8,7 +8,7 @@ export const MockDevice = ({
   return (
     <div
       className={cn(
-        "h-fit w-fit overflow-clip rounded-2xl border-2 bg-gray-600",
+        "h-fit w-fit overflow-hidden rounded-2xl border-2 bg-gray-600",
         className,
       )}
     >

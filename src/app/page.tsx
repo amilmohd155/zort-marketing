@@ -7,7 +7,6 @@ import {
   Support,
   CTA,
 } from "@/sections";
-import { Footer } from "@/sections/footer";
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
       <HowitWorksSection />
       <CTA />
       <Support />
-      <Footer />
     </main>
   );
 }

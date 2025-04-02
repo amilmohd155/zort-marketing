@@ -10,7 +10,7 @@ export const MenuIcon = ({
 }) => {
   const handleOnClick = useCallback(() => {
     setOpen(!open);
-  }, [open]);
+  }, [open, setOpen]);
 
   return (
     <svg

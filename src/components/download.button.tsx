@@ -1,11 +1,14 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export const DownloadButton = ({ className }: { className?: string }) => {
   return (
-    <Link href="/">
+    <Link
+      href={process.env.NEXT_PUBLIC_APP_STORE ?? "/"}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Image
         src="/apple_store.svg"
         width={200}

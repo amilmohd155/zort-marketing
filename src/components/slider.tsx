@@ -9,9 +9,8 @@ import {
   Variants,
   wrap,
 } from "motion/react";
-import { Children, Fragment, useCallback, useState } from "react";
-import { Button } from "./ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Children, useCallback, useState } from "react";
+import { ChevronRight } from "lucide-react";
 
 const variants: Variants = {
   initial: (direction: number) => ({
@@ -75,7 +74,7 @@ export const Slider = ({
       <AnimatePresence initial={false}>
         <motion.div
           key={page}
-          className="w-full shrink-0 cursor-grab active:cursor-grabbing"
+          className="relative w-full shrink-0 cursor-grab active:cursor-grabbing"
           custom={direction}
           variants={variants}
           initial="initial"

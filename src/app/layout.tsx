@@ -20,6 +20,7 @@ const monaSans = Mona_Sans({
 export const metadata: Metadata = {
   title: "Zort - AI-Powered Bet Tracking",
   description: "Track your betslips!",
+  metadataBase: new URL("https://zort-marketing.vercel.app/"),
 };
 
 export default function RootLayout({

@@ -5,6 +5,7 @@ import { Header } from "@/components";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/sections";
 import Provider from "@/provider";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,6 +40,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </Provider>
+        <Analytics />
       </body>
     </html>
   );

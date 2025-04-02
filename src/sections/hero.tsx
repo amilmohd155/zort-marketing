@@ -55,6 +55,7 @@ export const HeroSection = () => {
                 width={1206}
                 height={2622}
                 className="aspect-auto w-[200px]"
+                priority
               />
             </MockDevice>
             <MockDevice className="origin-center -translate-x-10 translate-y-10 translate-z-8 rotate-x-0 -rotate-y-[30deg] rotate-z-0 perspective-origin-center">
@@ -64,6 +65,7 @@ export const HeroSection = () => {
                 width={1206}
                 height={2622}
                 className="aspect-auto w-[200px]"
+                priority
               />
             </MockDevice>
             {/* <MockDevice className="origin-bottom-left -translate-x-1/2 rotate-12" /> */}

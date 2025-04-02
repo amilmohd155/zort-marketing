@@ -1,11 +1,12 @@
+"use client";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
-import { X } from "lucide-react";
+import { Textarea } from "../ui/textarea";
+import { Button } from "../ui/button";
+import { CloseButton } from "../buttons";
 
 const formSchema = z.object({
   firstName: z.string(),
@@ -17,31 +18,26 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export const SupportForm = ({ close }: { close: () => void }) => {
+export const SupportForm = ({
+  closeAction: close,
+}: {
+  closeAction: () => void;
+}) => {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
 
   return (
-    <div className="text-foreground rounded-xl bg-linear-30 from-[#343434] to-[#131313] px-2 py-5 md:p-5">
-      <h1 className="font-display text-2xl font-bold md:text-3xl">
-        Get in Touch
-      </h1>
-      <p className="mb-5 text-sm font-light">You can reach us anytime</p>
-
-      <Button
-        variant="ghost"
-        size="icon"
-        className="absolute top-5 right-5 rounded-full duration-200 hover:rotate-180"
-        onClick={() => {
-          form.reset();
-          form.clearErrors();
-          form.setFocus("firstName");
-          close();
-        }}
-      >
-        <X className="size-5 md:size-10" />
-      </Button>
+    <div className="text-foreground relative rounded-xl bg-linear-30 from-[#343434] to-[#131313] px-2 py-5 md:p-5">
+      <div className="flex flex-row items-start justify-between">
+        <div className="flex flex-col">
+          <h1 className="font-display text-2xl font-bold md:text-3xl">
+            Get in Touch
+          </h1>
+          <p className="mb-5 text-sm font-light">You can reach us anytime</p>
+        </div>
+        <CloseButton onClick={close} />
+      </div>
 
       <Form {...form}>
         <form className="space-y-2 md:space-y-4">

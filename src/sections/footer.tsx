@@ -1,9 +1,13 @@
-import { DownloadButton } from "@/components";
+"use client";
+import { DownloadButton, TermsModal } from "@/components";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { FaInstagram, FaTiktok } from "react-icons/fa";
 
 export const Footer = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <footer>
       <div className="container mx-auto">
@@ -41,17 +45,19 @@ export const Footer = () => {
                 <p className="text-foreground text-sm font-semibold uppercase">
                   Legal
                 </p>
-                <Link href="/">Terms and Conditions</Link>
+                <p className="cursor-pointer" onClick={() => setOpen(true)}>
+                  Terms and Conditions
+                </p>
               </div>
               <div className="space-y-2">
                 <p className="text-foreground text-sm font-semibold uppercase">
                   Follow us on
                 </p>
                 <div className="flex flex-row items-center justify-center gap-x-3 text-2xl md:justify-start">
-                  <Link href="/">
+                  <Link href={process.env.NEXT_PUBLIC_INSTAGRAM || "#"}>
                     <FaInstagram />
                   </Link>
-                  <Link href="/">
+                  <Link href={process.env.NEXT_PUBLIC_TIKTOK || "#"}>
                     <FaTiktok />
                   </Link>
                 </div>
@@ -66,6 +72,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
+      <TermsModal open={open} closeAction={() => setOpen(false)} />
     </footer>
   );
 };

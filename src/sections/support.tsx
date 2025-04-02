@@ -1,7 +1,5 @@
 "use client";
-
-import { SupportForm } from "@/components/support.form";
-import { SupportModal } from "@/components/support.modal";
+import { SupportModal } from "@/components/modals";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -23,17 +21,12 @@ export const Support = () => {
               <Button
                 size="lg"
                 onClick={() => setOpen(true)}
-                className="transition-transform duration-300 active:scale-80"
+                className="cursor-pointer transition-transform duration-300 active:scale-80"
               >
                 Contact us
               </Button>
             </div>
-            <SupportModal open={open} close={() => setOpen(false)}>
-              <SupportForm close={() => setOpen(false)} />
-            </SupportModal>
-            {/* <div className="">
-              <SupportForm />
-            </div> */}
+            <SupportModal closeAction={() => setOpen(false)} open={open} />
           </div>
         </div>
       </div>

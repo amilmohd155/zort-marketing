@@ -1,5 +1,4 @@
-import { DownloadButton } from "@/components";
-import { MockDevice } from "@/components/mock-device";
+import { MockDevice, DownloadButton } from "@/components";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 

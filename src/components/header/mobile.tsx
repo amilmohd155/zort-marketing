@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DownloadButton } from "../download.button";
+import { DownloadButton } from "../buttons";
 import { menuItems } from "@/data";
 
 const MobileNav = ({ onClick }: { onClick?: () => void }) => {

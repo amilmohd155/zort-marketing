@@ -1,8 +1,9 @@
+"use client";
 import { PropsWithChildren } from "react";
 import { AnimatePresence, motion, Variants } from "motion/react";
 type Props = PropsWithChildren<{
   open: boolean;
-  close: () => void;
+  closeAction: () => void;
 }>;
 
 const backdrop: Variants = {
@@ -45,21 +46,22 @@ const modal: Variants = {
   },
 };
 
-export const SupportModal = ({ open, close, children }: Props) => {
+export const Modal = ({ open, closeAction: close, children }: Props) => {
   return (
     <AnimatePresence>
       {open && (
-        <>
+        <dialog className="fixed inset-0 z-[9999] flex size-full items-center justify-center bg-transparent">
           <motion.div
             variants={backdrop}
             initial="closed"
             animate="opened"
             exit="closed"
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-[9999] bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => close()}
           />
-          <motion.dialog
+          <motion.div
+            id="modal"
             variants={modal}
             initial="opening"
             animate="opened"
@@ -73,17 +75,13 @@ export const SupportModal = ({ open, close, children }: Props) => {
                 duration: 0.5,
                 type: "spring",
               },
-              //   rotateX: {
-              //     duration: 0.5,
-              //     type: "inertia",
-              //   },
             }}
-            className="text-foreground absolute z-[10000] mx-auto block w-[90%] max-w-lg bg-transparent md:w-full"
-            onClick={(e) => e.stopPropagation()}
+            className="text-foreground mx-auto block w-[90%] max-w-lg bg-transparent md:w-full"
+            // onClick={(e) => e.stopPropagation()}
           >
             {children}
-          </motion.dialog>
-        </>
+          </motion.div>
+        </dialog>
       )}
     </AnimatePresence>
   );

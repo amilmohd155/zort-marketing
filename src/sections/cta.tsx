@@ -1,4 +1,4 @@
-import { DownloadButton, Circles } from "@/components";
+import { Circles, DownloadButton } from "@/components";
 import { MockDevice } from "@/components/mock-device";
 import Image from "next/image";
 

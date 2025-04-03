@@ -26,7 +26,7 @@ export const HeroSection = () => {
       <div className="container mx-auto px-4 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="flex flex-col items-center justify-center gap-y-8 text-center lg:items-start lg:text-start">
-            <h1 className="font-display z-10 max-w-xs text-5xl font-light md:text-6xl">
+            <h1 className="font-display z-10 max-w-xl text-5xl font-light md:text-6xl">
               Smarter{" "}
               <span className="bg-linear-to-r from-[#7474bf] to-[#348ac7] bg-clip-text text-transparent">
                 Betting
